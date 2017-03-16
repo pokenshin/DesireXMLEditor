@@ -1,0 +1,40 @@
+﻿<Page x:Class="DesireXMLEditor.AttributeIntellect"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DesireXMLEditor"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="AttributeIntellect" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="cmb_Save" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Height="20" Margin="0,10,0,0" Click="cmb_Save_Click">Save Changes</Button>
+        <TextBlock x:Name="txt_Title" Margin="0" Grid.Row="0" Grid.Column="0" TextWrapping="Wrap" Text="Attribute Intellect" VerticalAlignment="Top" TextAlignment="Center" FontSize="20" FontWeight="Bold"/>
+
+        <DataGrid x:Name="dg_XML" ItemsSource="{Binding}" HorizontalAlignment="Center" Height="478" Margin="0,30,0,0" Grid.Row="1" VerticalAlignment="Top" AutoGenerateColumns="False" CanUserAddRows="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=AttributePoints, Mode=TwoWay}" Header="Attribute Points" />
+                <DataGridTextColumn Binding="{Binding Path=BonusAP, Mode=TwoWay}" Header="Bonus AP" />
+                <DataGridTextColumn Binding="{Binding Path=Concentration, Mode=TwoWay}" Header="Concentration" />
+                <DataGridTextColumn Binding="{Binding Path=ConcentrationMag, Mode=TwoWay}" Header="Concentration Magnitude" />
+                <DataGridTextColumn Binding="{Binding Path=Learning, Mode=TwoWay}" Header="Learning" />
+                <DataGridTextColumn Binding="{Binding Path=LearningMag, Mode=TwoWay}" Header="Learning Magnitude" />
+                <DataGridTextColumn Binding="{Binding Path=Memory, Mode=TwoWay}" Header="Memory" />
+                <DataGridTextColumn Binding="{Binding Path=MemoryMag, Mode=TwoWay}" Header="Memory Magnitude" />
+                <DataGridTextColumn Binding="{Binding Path=Sense, Mode=TwoWay}" Header="Sense" />
+                <DataGridTextColumn Binding="{Binding Path=SenseMag, Mode=TwoWay}" Header="Sense Magnitude" />
+                <DataGridTextColumn Binding="{Binding Path=Eidos, Mode=TwoWay}" Header="Eidos" />
+                <DataGridTextColumn Binding="{Binding Path=EidosMag, Mode=TwoWay}" Header="Eidos Magnitude" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

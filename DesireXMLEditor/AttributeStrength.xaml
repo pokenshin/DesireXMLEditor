@@ -1,0 +1,39 @@
+﻿<Page x:Class="DesireXMLEditor.AttributeStrength"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DesireXMLEditor"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="1200"
+      Title="AttributeStrength" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="cmb_Save" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Height="20" Margin="0,10,0,0" Click="cmb_Save_Click">Save Changes</Button>
+        <TextBlock x:Name="txt_Title" Margin="0" Grid.Row="0" Grid.Column="0" TextWrapping="Wrap" Text="Attribute Strength" VerticalAlignment="Top" TextAlignment="Center" FontSize="20" FontWeight="Bold"/>
+
+        <DataGrid x:Name="dg_XML" ItemsSource="{Binding}" HorizontalAlignment="Center" Height="478" Margin="0,35,0,-240" Grid.Row="1" VerticalAlignment="Top" AutoGenerateColumns="False" CanUserAddRows="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=AttributePoints, Mode=TwoWay}" Header="Attribute Points" />
+                <DataGridTextColumn Binding="{Binding Path=BonusAP, Mode=TwoWay}" Header="Bonus AP" />
+                <DataGridTextColumn Binding="{Binding Path=Potency, Mode=TwoWay}" Header="Potency" />
+                <DataGridTextColumn Binding="{Binding Path=PotencyMag, Mode=TwoWay}" Header="Potency Magnitude" />
+                <DataGridTextColumn Binding="{Binding Path=Blow, Mode=TwoWay}" Header="Blow" />
+                <DataGridTextColumn Binding="{Binding Path=Hardness, Mode=TwoWay}" Header="Hardness" />
+                <DataGridTextColumn Binding="{Binding Path=Vigor, Mode=TwoWay}" Header="Vigor" />
+                <DataGridTextColumn Binding="{Binding Path=Load, Mode=TwoWay}" Header="Load" />
+                <DataGridTextColumn Binding="{Binding Path=LoadMag, Mode=TwoWay}" Header="Load Magnitude" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+    </Grid>
+</Page>
